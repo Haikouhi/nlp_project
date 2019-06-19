@@ -105,3 +105,7 @@ venv.bak/
 
 # datasets
 20_newsgroups
+Reviews.csv
+articles.csv
+football_salaries.csv
+
