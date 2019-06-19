@@ -28,3 +28,9 @@ CBOW & Skip-gram:
 ![](images/w2vec2.png)
 
 [Exemple de code ici :)](https://github.com/kavgan/nlp-in-practice/blob/master/word2vec/Word2Vec.ipynb)
+
+
+LSA :https://www.datacamp.com/community/tutorials/discovering-hidden-topics-python
+
+#### Topic Modeling :
+A Topic Model can be defined as an unsupervised technique to discover topics across various text documents. These topics are abstract in nature, i.e., words which are related to each other form a topic. Similarly, there can be multiple topics in an individual document.
