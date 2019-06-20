@@ -105,7 +105,12 @@ venv.bak/
 
 # datasets
 20_newsgroups
+cars
+hotels
 Reviews.csv
 articles.csv
 football_salaries.csv
 FIFA.csv
+reviews_data.txt
+reviews_data.txt.gz
+
