@@ -137,3 +137,6 @@ clean_text=preprocess_data(document_list)
 model=create_gensim_lsa_model(clean_text,number_of_topics,words)
 
 
+# Here, 7 Topics were discovered using Latent Semantic Analysis. 
+# Some of them are overlapping topics. For Capturing multiple meanings with higher accuracy 
+# we need to try LDA( latent Dirichlet allocation).
