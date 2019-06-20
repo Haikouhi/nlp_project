@@ -32,7 +32,7 @@ def main() :
     }
     # add hashtag after %23
     #data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23foot&lang=fr&result_type=mixed&count=100", headers=headers)
-    data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23world+cup&lang=fr&result_type=mixed&count=100", headers=headers)
+    data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23worldcup&lang=fr&result_type=mixed&count=100", headers=headers)
 
     # creating a full json file with data 
     with open('data.json', 'w') as outfile:
