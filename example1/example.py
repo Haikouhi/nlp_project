@@ -10,6 +10,7 @@ from nltk.stem.porter import PorterStemmer
 from gensim.models.coherencemodel import CoherenceModel
 import matplotlib.pyplot as plt
 
+
 # Loading Data : Let's first create data load function for loading articles.csv
 def load_data(path,file_name):
     """
@@ -20,7 +21,7 @@ def load_data(path,file_name):
     """
     documents_list = []
     titles=[]
-    with open( os.path.join(path, file_name) ,"r") as fin:
+    with open(os.path.join(path, file_name) ,"r") as fin:
         for line in fin.readlines():
             text = line.strip()
             documents_list.append(text)
@@ -126,4 +127,13 @@ def plot_graph(doc_clean,start, stop, step):
 
     start,stop,step=2,12,1
     plot_graph(clean_text,start,stop,step)
+
+# Run all the above functions
+# LSA Model
+number_of_topics=7
+words=10
+document_list,titles=load_data("","articles.csv")
+clean_text=preprocess_data(document_list)
+model=create_gensim_lsa_model(clean_text,number_of_topics,words)
+
 
