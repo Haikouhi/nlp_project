@@ -4,8 +4,8 @@ import json
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-client_key = '748JXlKv7PjqQqXtP7yU8W1aY'
-client_secret = 'KR2QrxDHc8cK5jmnHsRpAn8vtVikf8AELTo94v5oCWaM4jDNRF'
+client_key = ''
+client_secret = ''
 
 def init_api() :
     key_secret = '{}:{}'.format(client_key, client_secret).encode('ascii')
