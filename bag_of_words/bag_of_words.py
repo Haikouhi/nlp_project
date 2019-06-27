@@ -4,8 +4,8 @@ import json
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-client_key = ''
-client_secret = ''
+client_key = '748JXlKv7PjqQqXtP7yU8W1aY'
+client_secret = 'KR2QrxDHc8cK5jmnHsRpAn8vtVikf8AELTo94v5oCWaM4jDNRF'
 
 def init_api() :
     key_secret = '{}:{}'.format(client_key, client_secret).encode('ascii')
@@ -32,7 +32,7 @@ def main() :
     }
     # add hashtag after %23
     #data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23foot&lang=fr&result_type=mixed&count=100", headers=headers)
-    data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23womensworldcup&lang=en&result_type=mixed&count=100", headers=headers)
+    data = requests.get(" https://api.twitter.com/1.1/search/tweets.json?q=%23griezmann&lang=en&result_type=mixed&count=100", headers=headers)
 
     # creating a full json file with data 
     with open('data.json', 'w') as outfile:
