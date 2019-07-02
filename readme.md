@@ -52,3 +52,8 @@ LSA :https://www.datacamp.com/community/tutorials/discovering-hidden-topics-pyth
 
 #### Topic Modeling :
 A Topic Model can be defined as an unsupervised technique to discover topics across various text documents. These topics are abstract in nature, i.e., words which are related to each other form a topic. Similarly, there can be multiple topics in an individual document.
+
+
+
+
+check the article out here :https://medium.com/@Haikouhi/comparing-tweets-between-the-mens-2018-and-women-s-2019-world-cups-with-natural-language-e74acebbfde9
