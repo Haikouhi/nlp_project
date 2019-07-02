@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 #%matplotlib inline
 
 
-df = pd.read_csv('/home/haikouhi/simplon/nlp_project/FIFA.csv')
+df = pd.read_csv('Reviews.csv')
 df.head()
 
 #print(df)

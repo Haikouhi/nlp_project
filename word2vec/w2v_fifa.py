@@ -7,11 +7,11 @@ import logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 """ Now, let's take a closer look at this data below by printing the first line. """
-data_file="/home/haikouhi/simplon/nlp_project/FIFA.csv.gz"
-#data_file="/home/haikouhi/simplon/nlp_project/wwc.csv"
+data_file="/home/haikouhi/simplon/nlp_project/wmc.csv.gz"
+#data_file="/home/haikouhi/simplon/nlp_project/wwc.csv.gz"
 
-with gzip.open ('/home/haikouhi/simplon/nlp_project/FIFA.csv.gz', 'rb') as f:
-#with gzip.open ('/home/haikouhi/simplon/nlp_project/wwc.csv', 'rb') as f:
+with gzip.open ('/home/haikouhi/simplon/nlp_project/wmc.csv.gz', 'rb') as f:
+#with gzip.open ('/home/haikouhi/simplon/nlp_project/wwc.csv.gz', 'rb') as f:
 
     for i,line in enumerate (f):
         print(line)
@@ -46,7 +46,7 @@ logging.info ("Done reading data file")
 
 """ Training the Word2Vec model : just instantiate Word2Vec and pass the reviews that 
 we read in the previous step (the documents). So, we are essentially passing on a list of lists. 
-Where each list within the main list contains a set of tokens from a user review. 
+Where each list within the main list contains a set of tokens from a user tweet. 
 Word2Vec uses all these tokens to internally create a vocabulary. After building the vocabulary, 
 we just need to call train(...) to start training the Word2Vec model. Behind the scenes 
 we are actually training a simple neural network with a single hidden layer. 
@@ -57,56 +57,37 @@ model = gensim.models.Word2Vec (documents, size=150, window=10, min_count=2, wor
 model.train(documents,total_examples=len(documents),epochs=10)
 
 
-""" output : the first example shows a simple case of looking up words similar to the word dirty. 
-All we need to do here is to call the most_similar function and provide the word dirty as the 
-positive example. This returns the top 10 similar words. """
+""" output : the first example shows a simple case of looking up words similar to the word game. 
+All we need to do here is to call the most_similar function and provide the word game as the 
+positive example. This returns the top 3 similar words. """
 
 w1 = "game"
-model.wv.most_similar (positive=w1)
-print(w1)
+print(model.wv.most_similar (positive=w1, topn=3))
 
-# look up top 6 words similar to 'polite'
+# look up top 3 words similar to 'polite'
 w1 = ["win"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'france'
+# look up top 3 words similar to 'france'
 w1 = ["lose"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'shocked'
+# look up top 3 words similar to 'shocked'
 w1 = ["france"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'shocked'
+# look up top 3 words similar to 'shocked'
 w1 = ["best"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'shocked'
+# look up top 3 words similar to 'shocked'
 w1 = ["worst"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'shocked'
-w1 = ["women"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
-
-# look up top 6 words similar to 'shocked'
-w1 = ["men"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
-
-# look up top 6 words similar to 'shocked'
 w1 = ["angry"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 
-# look up top 6 words similar to 'shocked'
+# look up top 3 words similar to 'shocked'
 w1 = ["fun"]
-model.wv.most_similar (positive=w1,topn=5)
-print(w1)
+print(model.wv.most_similar (positive=w1,topn=3))
 

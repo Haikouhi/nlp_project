@@ -15,6 +15,7 @@ import umap
 
 from sklearn.datasets import fetch_20newsgroups
 
+df = pd.read_csv('tweet.csv', header = 0,delimiter=',')
 dataset = fetch_20newsgroups(shuffle=True, random_state=1, remove=('headers', 'footers', 'quotes'))
 documents = dataset.data
 #documents = dataset.target_names
